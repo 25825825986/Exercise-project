@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "iostream": "cpp"
+    },
+    "marscode.chatLanguage": "cn",
+    "Codegeex.RepoIndex": true,
+    "Codegeex.CompletionDelay": 0.5,
+    "Codegeex.GenerationPreference": "line by line",
+    "marscode.codeCompletionPro": {
+        "enableCodeCompletionPro": true
+    }
+}
