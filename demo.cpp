@@ -3,6 +3,8 @@
 using namespace std;
 
 //git remote add origin https://github.com/25825825986/Exercise-project.git
+//ssh-keygen -t rsa -b 4096 -C "153299005@qq.com"
+
 
 
 class Student{
