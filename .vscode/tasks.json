@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "task g++",
-            "command": "D:\\Download\\mingw64\bin\\g++.exe",
+            "command": "D:\\Download\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
