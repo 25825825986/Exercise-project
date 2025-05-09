@@ -1,64 +1,53 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-class Student{
-    public:
-        int m_id;
-        string m_name;
-
-        // 赋值学号
-        void set_id(int id){
-            m_id = id;
+bool isSimilar(string a, string b){
+    int m,n,i,j;
+    if(a.size() < b.size())
+        swap(a, b);
+    m = a.size();
+    n = b.size();
+    
+    if(abs(m-n) > 1)
+        return 0;
+    else if(m == n){
+        int flag = 0;
+        for (i = 0; i < m; i++){
+            if(a[i] != b[i])
+                flag++;
         }
-
-        //赋值姓名
-        void set_name(string name){
-            m_name = name;
-        }
-
-        //显示学生信息
-        void show(){
-            cout << "ID: " << m_id << endl;
-            cout << "Name: " << m_name << endl;
-        }
-};
-
-int main(){
-    int m, n, p, q, k = 0;
-    cin >> m >> n >> p >> q;
-    int c[m * n];
-    int a[m][n], b[p][q];
-
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
+        if(flag > 1)
+            return 0;
+        return 1;
+    }else{
+        int flag = 0;
+        for (i = 0, j = 0; i < m && j < n; i++)
         {
-            cin >> a[i][j];
+            if(a[i] != b[j]){
+                flag++;
+                if(flag > 1)
+                    return 0;
+            }
+                
+            else
+                j++;
         }
+        
+        return 1;
     }
+}
 
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            c[k] = a[i][j];
-            k++;
-        }
-    }
-
-    k = 0;
-
-    for (int i = 0; i < p; i++)
-    {
-        for (int j = 0; j < q; j++)
-        {
-            b[i][j] = c[k];
-            cout << b[i][j] << " ";
-            if(j == q-1)cout << endl;
-            k++;
-        }
+int main() {
+    int T,k;
+    cin >> T;
+    string a[T], b[T];
+    for (k = 0; k < T; k++)
+        cin >> a[k] >> b[k];
+    for (k = 0; k < T; k++){
+        if(isSimilar(a[k],b[k]))
+            cout << "similar" << endl;
+        else
+            cout << "not similar" << endl;
     }
     return 0;
 }
